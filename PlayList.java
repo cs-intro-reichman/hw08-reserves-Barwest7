@@ -102,12 +102,11 @@ class PlayList {
         }
         
             for (int j=this.size; j>i; j--) {
-                this.tracks[j] = this.tracks[j-1];
+                tracks[j] = tracks[j-1];
             }
-            this.tracks[i] = track;
+            tracks[i] = track;
             this.size++;
             return true;
-        
     }
      
     /** Removes the track in the given index from this list.
