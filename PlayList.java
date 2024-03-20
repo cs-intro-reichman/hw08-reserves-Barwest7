@@ -177,10 +177,10 @@ class PlayList {
      public void add(PlayList other) {
         //// replace this comment with your code
         if ((this.size + other.size) <= this.maxSize) {
-            for (int i = this.size; i<(this.size + other.size); i++) {
-                this.tracks[i] = other.tracks[(i-this.size)];
+            for (int i = 0; i<other.size; i++) {
+                this.tracks[this.size] = other.tracks[i];
+                this.size++;
             }
-            this.size = this.size + other.size;
         }
     }
 
