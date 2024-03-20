@@ -97,7 +97,7 @@ class PlayList {
      *  returns true. */
     public boolean add(int i, Track track) {
         //// replace the following statement with your code
-        if (i<0 || i>=this.size || this.size==this.maxSize) {
+        if (i<0 || i>this.size || this.size==this.maxSize) {
             return false;
         }
         
