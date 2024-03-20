@@ -101,14 +101,8 @@ class PlayList {
             return false;
         }
         
-        else if (i == (this.size -1)) {
-            this.tracks[size] = track;
-            this.size++;
-            return true;
-        }
-
         else {
-            for (int j=size; j>i; j--) {
+            for (int j=this.size; j>i; j--) {
                 this.tracks[j] = this.tracks[j-1];
             }
             this.tracks[i] = track;
@@ -229,5 +223,14 @@ class PlayList {
         // Uses the selection sort algorithm,  
         // calling the minIndex method in each iteration.
         //// replace this statement with your code
+
+        for (int i = 0; i < (this.size - 1); i++) {
+            int minimalIndex = minIndex(i);
+            if (i != minimalIndex) {
+                Track temp = tracks[i];
+                tracks[i] = tracks[minimalIndex];
+                tracks[minimalIndex] = temp;
+            }
+        }
     }
 }
